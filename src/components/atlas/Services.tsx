@@ -1,55 +1,41 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
 import {
-  Bot, Globe, Palette, LineChart, Megaphone, Network, GitBranch, Layers,
+  Globe, Palette, LayoutGrid, Workflow, BarChart3, Search,
 } from "lucide-react";
 
 const services = [
-  { icon: Bot, title: "Automação com IA", desc: "Agentes inteligentes, fluxos autônomos e integrações de modelos LLM em operações reais." },
-  { icon: Globe, title: "Criação de Sites", desc: "Sites e plataformas premium, performáticos e cinematográficos. Padrão Awwwards." },
-  { icon: Palette, title: "Branding", desc: "Identidades visuais sofisticadas, atemporais e construídas para liderar categoria." },
-  { icon: LineChart, title: "Gestão de Tráfego", desc: "Mídia paga estruturada por dados — Google, Meta, LinkedIn e canais emergentes." },
-  { icon: Megaphone, title: "Social Media", desc: "Conteúdo de alto padrão, narrativa de marca e presença digital memorável." },
-  { icon: Layers, title: "Estruturação Digital", desc: "Diagnóstico, arquitetura e implementação completa do ecossistema digital." },
-  { icon: GitBranch, title: "Funis Inteligentes", desc: "Jornadas de aquisição, ativação e retenção projetadas para escalar receita." },
-  { icon: Network, title: "Sistemas Inteligentes", desc: "Plataformas internas sob medida, dashboards e ferramentas proprietárias." },
+  { icon: Globe, title: "Sites institucionais", desc: "Páginas claras e responsivas para empresas que precisam transmitir credibilidade e organizar informações." },
+  { icon: LayoutGrid, title: "Landing pages", desc: "Páginas objetivas para campanhas, lançamentos e captação de contatos, focadas em conversão." },
+  { icon: Palette, title: "Identidade visual", desc: "Logotipo, paleta, tipografia e aplicações — um sistema visual coerente para a sua marca." },
+  { icon: Workflow, title: "Automações", desc: "Fluxos para WhatsApp, e-mail, CRM e planilhas. Menos trabalho manual no dia a dia." },
+  { icon: BarChart3, title: "Dashboards", desc: "Painéis simples para acompanhar vendas, atendimentos e indicadores do seu negócio." },
+  { icon: Search, title: "SEO & tráfego", desc: "Estrutura técnica, conteúdo e campanhas pagas para você ser encontrado por quem importa." },
 ];
 
 export function Services() {
   return (
-    <section id="servicos" className="relative py-32 md:py-40 overflow-hidden">
-      <div className="absolute inset-0 bg-grid opacity-20" />
-      <div className="absolute inset-x-0 top-0 h-px divider-line" />
+    <section id="servicos" className="relative py-28 md:py-36 border-t border-white/[0.06]">
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Serviços"
-          title="Tudo que sua marca precisa para escalar — sob um único teto."
-          description="Combinamos disciplinas que normalmente vivem em silos: tecnologia, design, branding e mídia operando em uma só inteligência."
+          title="O que entregamos."
+          description="Trabalhos sob medida para o porte e o momento de cada cliente. Sem pacote engessado."
         />
 
-        <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] rounded-xl overflow-hidden border border-white/[0.06]">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: (i % 4) * 0.08 }}
-              className="group relative rounded-2xl glass p-7 hover:bg-white/[0.06] transition-all duration-500 hover:-translate-y-1"
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.06 }}
+              className="group bg-background p-8 hover:bg-white/[0.02] transition-colors"
             >
-              <div className="absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ background: "linear-gradient(135deg, oklch(1 0 0 / 0.15), transparent 50%)" }} />
-              <div className="relative">
-                <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 border border-white/10 group-hover:border-white/20 transition-colors">
-                  <s.icon className="h-5 w-5 text-silver" strokeWidth={1.3} />
-                </div>
-                <h3 className="mt-6 font-display text-lg text-foreground">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <div className="mt-6 flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-muted-foreground/60 group-hover:text-foreground/80 transition-colors">
-                  <span>Saber mais</span>
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
-                </div>
-              </div>
+              <s.icon className="h-5 w-5 text-foreground/80" strokeWidth={1.4} />
+              <h3 className="mt-5 text-base font-medium text-foreground">{s.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -1,59 +1,58 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
-import t1 from "@/assets/test-1.jpg";
-import t2 from "@/assets/test-2.jpg";
-import t3 from "@/assets/test-3.jpg";
 
 const data = [
   {
-    img: t1, name: "Ricardo Mendes", role: "CEO · Helios AI", result: "8.4x ROAS em 60 dias",
-    quote: "A ATLAS reposicionou nossa marca de um startup técnico para uma referência de categoria. O salto em percepção e em receita foi imediato.",
+    initials: "MR",
+    name: "Marcelo Ribeiro",
+    role: "Sócio · Forno Antico",
+    quote: "O site ficou muito mais organizado e nossos clientes começaram a pedir direto pelo cardápio digital. O processo foi tranquilo do início ao fim.",
   },
   {
-    img: t2, name: "Carolina Reis", role: "Founder · Maison Vère", result: "+212% ticket médio",
-    quote: "Eles não entregam um site — eles entregam um sistema. Cada detalhe foi pensado em função do crescimento da marca.",
+    initials: "AS",
+    name: "Ana Souza",
+    role: "Gestora · Clínica Lumis",
+    quote: "Hoje temos uma identidade visual coerente em todos os materiais e o site passou a transmitir muito mais profissionalismo para os pacientes.",
   },
   {
-    img: t3, name: "Henrique Vasco", role: "COO · Vault Finance", result: "0 → 40k usuários",
-    quote: "Trabalhamos com agências internacionais antes. Nenhuma operou com a precisão e o padrão visual da ATLAS.",
+    initials: "TC",
+    name: "Thiago Carvalho",
+    role: "Proprietário · Norte Barbearia",
+    quote: "A automação de agendamento reduziu muito o tempo no WhatsApp. Trabalho direto, comunicação clara e prazos cumpridos.",
   },
 ];
 
 export function Testimonials() {
   return (
-    <section className="relative py-32 md:py-40">
+    <section className="relative py-28 md:py-36 border-t border-white/[0.06]">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Depoimentos"
-          title="O que dizem fundadores que escalaram com a ATLAS."
+          title="O que clientes dizem."
         />
 
-        <div className="mt-20 grid md:grid-cols-3 gap-5">
+        <div className="mt-16 grid md:grid-cols-3 gap-5">
           {data.map((t, i) => (
             <motion.figure
               key={t.name}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="relative rounded-3xl glass p-8 flex flex-col"
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="rounded-xl border border-white/[0.06] bg-white/[0.015] p-7 flex flex-col"
             >
-              <div className="text-silver text-5xl font-display leading-none opacity-30">"</div>
-              <blockquote className="mt-2 text-foreground/90 leading-relaxed text-[15px]">
-                {t.quote}
+              <blockquote className="text-[15px] text-foreground/90 leading-relaxed">
+                “{t.quote}”
               </blockquote>
-              <div className="mt-8 pt-6 border-t border-white/[0.08] flex items-center gap-4">
-                <img src={t.img} alt={t.name} loading="lazy"
-                  className="h-12 w-12 rounded-full object-cover ring-1 ring-white/10" />
-                <div className="flex-1">
+              <figcaption className="mt-8 pt-5 border-t border-white/[0.06] flex items-center gap-3">
+                <div className="h-10 w-10 rounded-full bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-xs font-medium text-foreground">
+                  {t.initials}
+                </div>
+                <div>
                   <div className="text-sm font-medium text-foreground">{t.name}</div>
                   <div className="text-xs text-muted-foreground">{t.role}</div>
                 </div>
-              </div>
-              <div className="mt-4 inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-silver">
-                <span className="h-1 w-1 rounded-full bg-white" />
-                {t.result}
-              </div>
+              </figcaption>
             </motion.figure>
           ))}
         </div>

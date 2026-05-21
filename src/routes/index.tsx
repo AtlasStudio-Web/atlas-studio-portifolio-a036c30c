@@ -12,10 +12,10 @@ import { Footer } from "@/components/atlas/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ATLAS Studio — Arquitetura digital para marcas de elite" },
-      { name: "description", content: "Estúdio premium de IA, automação, branding e crescimento digital. Sistemas inteligentes para marcas que lideram categoria." },
-      { property: "og:title", content: "ATLAS Studio — Arquitetura digital para marcas de elite" },
-      { property: "og:description", content: "IA, automação e design cinematográfico para marcas high-ticket." },
+      { title: "ATLAS Studio — Sites, branding e automação para pequenas e médias empresas" },
+      { name: "description", content: "Estúdio digital especializado em sites, identidade visual e automações sob medida para negócios locais, profissionais e pequenas empresas." },
+      { property: "og:title", content: "ATLAS Studio — Sites, branding e automação" },
+      { property: "og:description", content: "Presença digital bem feita para negócios que querem crescer com consistência." },
       { property: "og:type", content: "website" },
     ],
   }),
