@@ -4,18 +4,20 @@ import { Hero } from "@/components/atlas/Hero";
 import { About } from "@/components/atlas/About";
 import { Services } from "@/components/atlas/Services";
 import { Cases } from "@/components/atlas/Cases";
+import { InstagramSection } from "@/components/atlas/Instagram";
 import { Differentials } from "@/components/atlas/Differentials";
 import { Testimonials } from "@/components/atlas/Testimonials";
 import { CTA } from "@/components/atlas/CTA";
 import { Footer } from "@/components/atlas/Footer";
+import { FloatingCTA } from "@/components/atlas/FloatingCTA";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ATLAS Studio — Sites, branding e automação para pequenas e médias empresas" },
-      { name: "description", content: "Estúdio digital especializado em sites, identidade visual e automações sob medida para negócios locais, profissionais e pequenas empresas." },
-      { property: "og:title", content: "ATLAS Studio — Sites, branding e automação" },
-      { property: "og:description", content: "Presença digital bem feita para negócios que querem crescer com consistência." },
+      { title: "ATLAS Studio — Design, IA e crescimento digital para marcas modernas" },
+      { name: "description", content: "Estúdio digital especializado em landing pages, sites premium, automações com IA, branding e gestão de Instagram para marcas que querem crescer no digital." },
+      { property: "og:title", content: "ATLAS Studio — Design, IA & crescimento digital" },
+      { property: "og:description", content: "Transformamos negócios comuns em marcas digitais modernas." },
       { property: "og:type", content: "website" },
     ],
   }),
@@ -30,10 +32,12 @@ function Index() {
       <About />
       <Services />
       <Cases />
+      <InstagramSection />
       <Differentials />
       <Testimonials />
       <CTA />
       <Footer />
+      <FloatingCTA />
     </main>
   );
 }
