@@ -1,16 +1,51 @@
 import { motion } from "framer-motion";
 import { SectionHeader } from "./SectionHeader";
 import {
-  Globe, Palette, LayoutGrid, Workflow, BarChart3, Search,
+  LayoutGrid, Globe, Sparkles, Instagram, Camera,
+  Palette, Compass, ImageIcon,
 } from "lucide-react";
 
 const services = [
-  { icon: Globe, title: "Sites institucionais", desc: "Páginas claras e responsivas para empresas que precisam transmitir credibilidade e organizar informações." },
-  { icon: LayoutGrid, title: "Landing pages", desc: "Páginas objetivas para campanhas, lançamentos e captação de contatos, focadas em conversão." },
-  { icon: Palette, title: "Identidade visual", desc: "Logotipo, paleta, tipografia e aplicações — um sistema visual coerente para a sua marca." },
-  { icon: Workflow, title: "Automações", desc: "Fluxos para WhatsApp, e-mail, CRM e planilhas. Menos trabalho manual no dia a dia." },
-  { icon: BarChart3, title: "Dashboards", desc: "Painéis simples para acompanhar vendas, atendimentos e indicadores do seu negócio." },
-  { icon: Search, title: "SEO & tráfego", desc: "Estrutura técnica, conteúdo e campanhas pagas para você ser encontrado por quem importa." },
+  {
+    icon: LayoutGrid,
+    title: "Landing pages de alta conversão",
+    desc: "Páginas estratégicas, com copy orientada a resultado e estrutura testada para transformar visitantes em clientes.",
+  },
+  {
+    icon: Globe,
+    title: "Sites premium",
+    desc: "Sites institucionais sofisticados, rápidos e responsivos, construídos para posicionar a sua marca como referência.",
+  },
+  {
+    icon: Sparkles,
+    title: "Automações com IA",
+    desc: "Atendimento automatizado, qualificação de leads e integrações inteligentes que reduzem tarefas manuais.",
+  },
+  {
+    icon: Instagram,
+    title: "Gestão de Instagram",
+    desc: "Planejamento, posicionamento e execução completa do seu perfil — feed coerente e conteúdo com intenção.",
+  },
+  {
+    icon: Camera,
+    title: "Criação de conteúdo",
+    desc: "Roteiros, fotografia e edição de vídeos curtos para destacar sua marca no digital com identidade própria.",
+  },
+  {
+    icon: ImageIcon,
+    title: "Design para redes sociais",
+    desc: "Posts, carrosséis e stories desenhados para gerar autoridade e fortalecer a percepção da sua marca.",
+  },
+  {
+    icon: Palette,
+    title: "Branding digital",
+    desc: "Construção de identidade visual completa: logotipo, paleta, tipografia e diretrizes de aplicação.",
+  },
+  {
+    icon: Compass,
+    title: "Estratégia de presença online",
+    desc: "Diagnóstico, posicionamento e plano de ação para sua marca crescer de forma consistente no digital.",
+  },
 ];
 
 export function Services() {
@@ -19,23 +54,31 @@ export function Services() {
       <div className="relative mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Serviços"
-          title="O que entregamos."
-          description="Trabalhos sob medida para o porte e o momento de cada cliente. Sem pacote engessado."
+          title="Tudo que sua marca precisa para crescer no digital."
+          description="Soluções integradas de design, tecnologia e conteúdo — pensadas para gerar autoridade, presença e resultado real."
         />
 
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] rounded-xl overflow-hidden border border-white/[0.06]">
+        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.06] rounded-xl overflow-hidden border border-white/[0.06]">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.06 }}
-              className="group bg-background p-8 hover:bg-white/[0.02] transition-colors"
+              transition={{ duration: 0.5, delay: (i % 4) * 0.05 }}
+              className="group relative bg-background p-8 transition-colors hover:bg-white/[0.025] overflow-hidden"
             >
-              <s.icon className="h-5 w-5 text-foreground/80" strokeWidth={1.4} />
-              <h3 className="mt-5 text-base font-medium text-foreground">{s.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              <div
+                className="absolute -top-24 -right-24 h-48 w-48 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-3xl pointer-events-none"
+                style={{ background: "radial-gradient(closest-side, oklch(1 0 0 / 0.10), transparent 70%)" }}
+              />
+              <div className="relative">
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.02]">
+                  <s.icon className="h-4.5 w-4.5 text-foreground/85" strokeWidth={1.4} />
+                </div>
+                <h3 className="mt-5 text-[15px] font-medium text-foreground leading-snug">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>

@@ -1,4 +1,5 @@
 import { Logo } from "./Logo";
+import { ATLAS_INSTAGRAM } from "@/lib/atlas";
 
 export function Footer() {
   return (
@@ -8,20 +9,39 @@ export function Footer() {
           <div className="md:col-span-5">
             <Logo />
             <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Estúdio digital focado em sites, identidade visual e automações
-              para pequenas e médias empresas.
+              Estúdio digital de design, IA e estratégia — para marcas que querem
+              crescer com presença, autoridade e consistência no digital.
             </p>
           </div>
 
-          <FooterCol title="Navegação" links={[
-            ["Sobre", "#sobre"], ["Serviços", "#servicos"], ["Trabalhos", "#cases"], ["Processo", "#diferenciais"], ["Contato", "#contato"],
-          ]} />
-          <FooterCol title="Serviços" links={[
-            ["Sites", "#servicos"], ["Landing pages", "#servicos"], ["Identidade visual", "#servicos"], ["Automações", "#servicos"],
-          ]} />
-          <FooterCol title="Contato" links={[
-            ["contato@atlas.studio", "mailto:contato@atlas.studio"], ["WhatsApp", "https://wa.me/5511999999999"], ["Instagram", "#"], ["LinkedIn", "#"],
-          ]} />
+          <FooterCol
+            title="Navegação"
+            links={[
+              ["Serviços", "#servicos"],
+              ["Cases", "#cases"],
+              ["Instagram", "#instagram"],
+              ["Processo", "#diferenciais"],
+              ["Contato", "#contato"],
+            ]}
+          />
+          <FooterCol
+            title="Serviços"
+            links={[
+              ["Landing pages", "#servicos"],
+              ["Sites premium", "#servicos"],
+              ["Automações com IA", "#servicos"],
+              ["Gestão de Instagram", "#servicos"],
+              ["Branding digital", "#servicos"],
+            ]}
+          />
+          <FooterCol
+            title="Contato"
+            links={[
+              ["Instagram", ATLAS_INSTAGRAM],
+              ["Solicitar projeto", ATLAS_INSTAGRAM],
+              ["Falar conosco", ATLAS_INSTAGRAM],
+            ]}
+          />
         </div>
 
         <div className="mt-14 pt-6 border-t border-white/[0.06] flex flex-col md:flex-row md:items-center justify-between gap-3">
@@ -29,7 +49,7 @@ export function Footer() {
             © {new Date().getFullYear()} ATLAS Studio · Todos os direitos reservados
           </div>
           <div className="text-xs text-muted-foreground">
-            São Paulo · Brasil
+            Design, IA & crescimento digital · Brasil
           </div>
         </div>
       </div>
@@ -44,7 +64,12 @@ function FooterCol({ title, links }: { title: string; links: [string, string][] 
       <ul className="mt-4 space-y-2.5">
         {links.map(([l, h]) => (
           <li key={l}>
-            <a href={h} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href={h}
+              target={h.startsWith("http") ? "_blank" : undefined}
+              rel={h.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
               {l}
             </a>
           </li>
