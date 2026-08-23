@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ATLAS_INSTAGRAM } from "@/lib/atlas";
+import { ATLAS_INSTAGRAM, ATLAS_WHATSAPP } from "@/lib/atlas";
 import { ArrowUpRight } from "lucide-react";
 
 export function CTA() {
@@ -46,8 +46,8 @@ export function CTA() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-muted-foreground max-w-lg mx-auto leading-relaxed text-[15px]"
         >
-          Conte sobre o seu projeto pelo Instagram. Respondemos rapidamente
-          com uma proposta inicial e próximos passos.
+          Chame a gente no WhatsApp e conte sobre o seu projeto. Respondemos
+          rapidamente com uma proposta inicial e os próximos passos.
         </motion.p>
 
         <motion.div
@@ -58,21 +58,22 @@ export function CTA() {
           className="mt-10 flex flex-wrap gap-3 items-center justify-center"
         >
           <a
-            href={ATLAS_INSTAGRAM}
+            href={ATLAS_WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-md bg-foreground px-7 py-4 text-sm font-medium text-background hover:bg-foreground/90 transition-all hover:gap-3"
+            aria-label="Falar com a Atlas Studio pelo WhatsApp"
+            className="group inline-flex items-center gap-2 rounded-md bg-foreground px-7 py-4 text-sm font-medium text-background hover:bg-foreground/90 transition-all hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Solicitar projeto
+            Falar com a Atlas
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
           <a
             href={ATLAS_INSTAGRAM}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md border border-white/10 px-7 py-4 text-sm text-foreground hover:bg-white/[0.04] transition-colors"
+            className="rounded-md border border-white/10 px-7 py-4 text-sm text-foreground hover:bg-white/[0.04] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40"
           >
-            Falar conosco
+            Ver Instagram
           </a>
         </motion.div>
       </div>

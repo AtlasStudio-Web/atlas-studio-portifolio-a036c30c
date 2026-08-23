@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Logo } from "./Logo";
-import { ATLAS_INSTAGRAM } from "@/lib/atlas";
+import { ATLAS_WHATSAPP } from "@/lib/atlas";
 
 const links = [
   { href: "#servicos", label: "Serviços" },
-  { href: "#cases", label: "Cases" },
   { href: "#instagram", label: "Instagram" },
   { href: "#diferenciais", label: "Processo" },
   { href: "#contato", label: "Contato" },
@@ -43,12 +42,13 @@ export function Nav() {
             ))}
           </nav>
           <a
-            href={ATLAS_INSTAGRAM}
+            href={ATLAS_WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md bg-foreground px-4 py-2 text-[12px] font-medium text-background hover:bg-foreground/90 transition-colors"
+            aria-label="Falar com a Atlas Studio pelo WhatsApp"
+            className="rounded-md bg-foreground px-4 py-2 text-[12px] font-medium text-background hover:bg-foreground/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Iniciar projeto
+            Falar com a Atlas
           </a>
         </div>
       </div>

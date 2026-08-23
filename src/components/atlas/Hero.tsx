@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ATLAS_INSTAGRAM } from "@/lib/atlas";
+import { ATLAS_WHATSAPP } from "@/lib/atlas";
 import { ArrowUpRight } from "lucide-react";
 
 export function Hero() {
@@ -56,19 +56,20 @@ export function Hero() {
           className="mt-10 flex flex-wrap items-center gap-3"
         >
           <a
-            href={ATLAS_INSTAGRAM}
+            href={ATLAS_WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-md bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90 hover:gap-3"
+            aria-label="Falar com a Atlas Studio pelo WhatsApp"
+            className="group inline-flex items-center gap-2 rounded-md bg-foreground px-6 py-3.5 text-sm font-medium text-background transition-all hover:bg-foreground/90 hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            Iniciar um projeto
+            Falar com a Atlas
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
           <a
-            href="#cases"
-            className="rounded-md border border-white/10 px-6 py-3.5 text-sm text-foreground hover:bg-white/[0.04] transition-colors"
+            href="#servicos"
+            className="rounded-md border border-white/10 px-6 py-3.5 text-sm text-foreground hover:bg-white/[0.04] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40"
           >
-            Ver trabalhos
+            Ver serviços
           </a>
         </motion.div>
 

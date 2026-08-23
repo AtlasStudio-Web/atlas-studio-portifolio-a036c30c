@@ -1,5 +1,5 @@
 import { Logo } from "./Logo";
-import { ATLAS_INSTAGRAM } from "@/lib/atlas";
+import { ATLAS_INSTAGRAM, ATLAS_WHATSAPP } from "@/lib/atlas";
 
 export function Footer() {
   return (
@@ -18,7 +18,6 @@ export function Footer() {
             title="Navegação"
             links={[
               ["Serviços", "#servicos"],
-              ["Cases", "#cases"],
               ["Instagram", "#instagram"],
               ["Processo", "#diferenciais"],
               ["Contato", "#contato"],
@@ -37,9 +36,8 @@ export function Footer() {
           <FooterCol
             title="Contato"
             links={[
+              ["Falar pelo WhatsApp", ATLAS_WHATSAPP],
               ["Instagram", ATLAS_INSTAGRAM],
-              ["Solicitar projeto", ATLAS_INSTAGRAM],
-              ["Falar conosco", ATLAS_INSTAGRAM],
             ]}
           />
         </div>
