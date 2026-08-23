@@ -3,7 +3,6 @@ import { Nav } from "@/components/atlas/Nav";
 import { Hero } from "@/components/atlas/Hero";
 import { About } from "@/components/atlas/About";
 import { Services } from "@/components/atlas/Services";
-import { Cases } from "@/components/atlas/Cases";
 import { InstagramSection } from "@/components/atlas/Instagram";
 import { Differentials } from "@/components/atlas/Differentials";
 import { Testimonials } from "@/components/atlas/Testimonials";
@@ -31,7 +30,6 @@ function Index() {
       <Hero />
       <About />
       <Services />
-      <Cases />
       <InstagramSection />
       <Differentials />
       <Testimonials />

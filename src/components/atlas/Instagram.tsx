@@ -5,10 +5,10 @@ import { ArrowUpRight, Instagram as IGIcon } from "lucide-react";
 
 const posts = [
   { tone: "from-neutral-800 to-neutral-950", label: "Editorial", title: "Reposicionamento de marca" },
-  { tone: "from-zinc-700 to-zinc-950", label: "Bastidores", title: "Sessão de fotos · Clínica Lumis" },
-  { tone: "from-stone-800 to-black", label: "Lançamento", title: "Novo site · Forno Antico" },
+  { tone: "from-zinc-700 to-zinc-950", label: "Bastidores", title: "Direção de arte em estúdio" },
+  { tone: "from-stone-800 to-black", label: "Lançamento", title: "Bastidores de um novo site" },
   { tone: "from-neutral-700 to-neutral-950", label: "Estratégia", title: "3 erros em landing pages" },
-  { tone: "from-neutral-900 to-black", label: "Case", title: "+218% clientes · Norte Barbearia" },
+  { tone: "from-neutral-900 to-black", label: "Processo", title: "Como estruturamos um projeto" },
   { tone: "from-zinc-800 to-neutral-950", label: "Conteúdo", title: "Identidade visual que vende" },
 ];
 
