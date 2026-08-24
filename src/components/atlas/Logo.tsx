@@ -15,7 +15,7 @@ export function Logo({ className = "" }: { className?: string }) {
       </svg>
       <div className="flex items-baseline gap-1.5">
         <span className="text-[15px] font-semibold tracking-[0.32em] text-silver">ATLAS</span>
-        <span className="text-[10px] tracking-[0.4em] text-muted-foreground">STUDIO</span>
+        <span className="hidden xs:inline sm:inline text-[10px] tracking-[0.4em] text-muted-foreground">STUDIO</span>
       </div>
     </div>
   );
