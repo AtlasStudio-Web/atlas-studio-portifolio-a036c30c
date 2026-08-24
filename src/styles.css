@@ -45,6 +45,9 @@
 :root {
   --radius: 0.75rem;
 
+  /* real header height + iOS safe area (mobile) */
+  --header-height: calc(4.125rem + env(safe-area-inset-top, 0px));
+
   /* Brand: #0D0D0D / #A7A7A7 / #FFFFFF */
   --background: oklch(0.13 0 0);
   --foreground: oklch(0.985 0 0);
