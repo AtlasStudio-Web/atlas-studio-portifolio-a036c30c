@@ -27,8 +27,11 @@ export function Nav() {
         scrolled ? "border-b border-white/[0.06] bg-background/75 backdrop-blur-xl" : ""
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex items-center justify-between py-4">
+      <div
+        className="mx-auto max-w-7xl px-4 sm:px-6"
+        style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
+      >
+        <div className="flex items-center justify-between gap-3 py-3 md:py-4">
           <Logo />
           <nav className="hidden md:flex items-center gap-8">
             {links.map((l) => (
