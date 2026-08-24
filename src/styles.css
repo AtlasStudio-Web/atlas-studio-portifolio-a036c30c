@@ -79,6 +79,10 @@
   --gradient-edge: linear-gradient(180deg, transparent, oklch(1 0 0 / 0.04), transparent);
 }
 
+@media (min-width: 768px) {
+  :root { --header-height: 4.5rem; }
+}
+
 @layer base {
   * { border-color: var(--color-border); }
 
