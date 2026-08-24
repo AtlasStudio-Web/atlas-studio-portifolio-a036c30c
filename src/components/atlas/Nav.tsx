@@ -32,7 +32,7 @@ export function Nav() {
         style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
       >
         <div className="flex items-center justify-between gap-3 py-3 md:py-4">
-          <Logo />
+          <Logo className="shrink-0" />
           <nav className="hidden md:flex items-center gap-8">
             {links.map((l) => (
               <a
@@ -49,7 +49,7 @@ export function Nav() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Falar com a Atlas Studio pelo WhatsApp"
-            className="rounded-md bg-foreground px-4 py-2 text-[12px] font-medium text-background hover:bg-foreground/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="shrink-0 whitespace-nowrap rounded-md bg-foreground px-3 py-2 text-[11px] md:px-4 md:text-[12px] font-medium text-background hover:bg-foreground/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Falar com a Atlas
           </a>
