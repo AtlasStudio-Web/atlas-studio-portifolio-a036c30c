@@ -45,6 +45,9 @@
 :root {
   --radius: 0.75rem;
 
+  /* real header height + iOS safe area (mobile) */
+  --header-height: calc(4.125rem + env(safe-area-inset-top, 0px));
+
   /* Brand: #0D0D0D / #A7A7A7 / #FFFFFF */
   --background: oklch(0.13 0 0);
   --foreground: oklch(0.985 0 0);
@@ -74,6 +77,10 @@
   --gradient-silver: linear-gradient(135deg, oklch(0.98 0 0) 0%, oklch(0.72 0 0) 40%, oklch(0.55 0 0) 70%, oklch(0.92 0 0) 100%);
   --gradient-radial-glow: radial-gradient(ellipse at center, oklch(1 0 0 / 0.08), transparent 60%);
   --gradient-edge: linear-gradient(180deg, transparent, oklch(1 0 0 / 0.04), transparent);
+}
+
+@media (min-width: 768px) {
+  :root { --header-height: 4.5rem; }
 }
 
 @layer base {

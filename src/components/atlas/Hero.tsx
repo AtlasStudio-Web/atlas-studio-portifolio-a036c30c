@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100vh] flex items-center overflow-hidden pt-32 pb-24">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden pb-24 pt-[calc(var(--header-height)+2.5rem)] md:pt-[calc(var(--header-height)+4rem)]">
       {/* layered ambient background */}
       <div className="absolute inset-0 bg-grid opacity-[0.10]" />
       <div
