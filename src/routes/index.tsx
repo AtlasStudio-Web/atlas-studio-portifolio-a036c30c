@@ -1,41 +1,54 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/atlas/Nav";
-import { Hero } from "@/components/atlas/Hero";
-import { About } from "@/components/atlas/About";
-import { Services } from "@/components/atlas/Services";
-import { InstagramSection } from "@/components/atlas/Instagram";
-import { Differentials } from "@/components/atlas/Differentials";
-import { Testimonials } from "@/components/atlas/Testimonials";
-import { CTA } from "@/components/atlas/CTA";
+import { CinematicHero } from "@/components/atlas/CinematicHero";
+import { WhatWeDo } from "@/components/atlas/WhatWeDo";
+import { HorizontalProjects } from "@/components/atlas/HorizontalProjects";
+import { Process } from "@/components/atlas/Process";
+import { Manifesto } from "@/components/atlas/Manifesto";
+import { ContactCTA } from "@/components/atlas/ContactCTA";
 import { Footer } from "@/components/atlas/Footer";
 import { FloatingCTA } from "@/components/atlas/FloatingCTA";
+import { CustomCursor } from "@/components/ui/custom-cursor";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ATLAS Studio — Design, IA e crescimento digital para marcas modernas" },
-      { name: "description", content: "Estúdio digital especializado em landing pages, sites premium, automações com IA, branding e gestão de Instagram para marcas que querem crescer no digital." },
-      { property: "og:title", content: "ATLAS Studio — Design, IA & crescimento digital" },
-      { property: "og:description", content: "Transformamos negócios comuns em marcas digitais modernas." },
+      { title: "Atlas Studio — Sites, Design & Digital" },
+      {
+        name: "description",
+        content:
+          "A Atlas Studio cria experiências digitais, sites e estratégias de presença online para empresas que querem crescer.",
+      },
+      { property: "og:title", content: "Atlas Studio — Sites, Design & Digital" },
+      {
+        property: "og:description",
+        content:
+          "Sites, landing pages, conteúdo e marketing para empresas que querem ser percebidas de outra forma.",
+      },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://atlas-studio-portifolio.lovable.app/" }],
   }),
   component: Index,
 });
 
 function Index() {
   return (
-    <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div id="topo" className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+      <div className="grain" aria-hidden />
+      <CustomCursor />
       <Nav />
-      <Hero />
-      <About />
-      <Services />
-      <InstagramSection />
-      <Differentials />
-      <Testimonials />
-      <CTA />
+      <main>
+        <CinematicHero />
+        <WhatWeDo />
+        <HorizontalProjects />
+        <Process />
+        <Manifesto />
+        <ContactCTA />
+      </main>
       <Footer />
       <FloatingCTA />
-    </main>
+    </div>
   );
 }
