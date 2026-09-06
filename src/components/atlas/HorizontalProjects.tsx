@@ -130,7 +130,7 @@ export function HorizontalProjects() {
                   loading="lazy"
                   width={1408}
                   height={1008}
-                  className="block aspect-[4/3] w-full object-cover grayscale transition-all duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:grayscale-0 lg:aspect-[16/10]"
+                  className="block aspect-[4/3] w-full object-cover grayscale transition-all duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:grayscale-0 lg:aspect-auto lg:h-[46vh]"
                 />
                 <span className="absolute left-5 top-5 border border-white/25 bg-background/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-foreground backdrop-blur-sm">
                   {p.type}
