@@ -3,52 +3,49 @@ import { ATLAS_INSTAGRAM, ATLAS_WHATSAPP } from "@/lib/atlas";
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.06]">
-      <div className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-5">
+    <footer className="border-t border-white/[0.07]">
+      <div className="mx-auto max-w-[1500px] px-6 py-14 md:px-10">
+        <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+          <div className="max-w-sm">
             <Logo />
-            <p className="mt-5 text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Estúdio digital de design, IA e estratégia — para marcas que querem
-              crescer com presença, autoridade e consistência no digital.
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              Studio digital de sites, design e presença online para empresas
+              que querem ser percebidas de outra forma.
             </p>
           </div>
 
-          <FooterCol
-            title="Navegação"
-            links={[
-              ["Serviços", "#servicos"],
-              ["Instagram", "#instagram"],
-              ["Processo", "#diferenciais"],
-              ["Contato", "#contato"],
-            ]}
-          />
-          <FooterCol
-            title="Serviços"
-            links={[
-              ["Landing pages", "#servicos"],
-              ["Sites premium", "#servicos"],
-              ["Automações com IA", "#servicos"],
-              ["Gestão de Instagram", "#servicos"],
-              ["Branding digital", "#servicos"],
-            ]}
-          />
-          <FooterCol
-            title="Contato"
-            links={[
-              ["Falar pelo WhatsApp", ATLAS_WHATSAPP],
-              ["Instagram", ATLAS_INSTAGRAM],
-            ]}
-          />
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+            <FooterCol
+              title="Navegação"
+              links={[
+                ["Projetos", "#projetos"],
+                ["Serviços", "#servicos"],
+                ["Processo", "#processo"],
+                ["Contato", "#contato"],
+              ]}
+            />
+            <FooterCol
+              title="Serviços"
+              links={[
+                ["Sites", "#servicos"],
+                ["Landing pages", "#servicos"],
+                ["Conteúdo", "#servicos"],
+                ["Marketing", "#servicos"],
+              ]}
+            />
+            <FooterCol
+              title="Contato"
+              links={[
+                ["WhatsApp", ATLAS_WHATSAPP],
+                ["Instagram", ATLAS_INSTAGRAM],
+              ]}
+            />
+          </div>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-white/[0.06] flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <div className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} ATLAS Studio · Todos os direitos reservados
-          </div>
-          <div className="text-xs text-muted-foreground">
-            Design, IA & crescimento digital · Brasil
-          </div>
+        <div className="mt-14 flex flex-col justify-between gap-3 border-t border-white/[0.07] pt-6 text-[11px] uppercase tracking-[0.2em] text-muted-foreground md:flex-row">
+          <span>© {new Date().getFullYear()} Atlas Studio</span>
+          <span>Sites · Design · Presença digital</span>
         </div>
       </div>
     </footer>
@@ -57,16 +54,16 @@ export function Footer() {
 
 function FooterCol({ title, links }: { title: string; links: [string, string][] }) {
   return (
-    <div className="md:col-span-2">
-      <div className="text-[11px] tracking-[0.25em] uppercase text-foreground/80">{title}</div>
-      <ul className="mt-4 space-y-2.5">
+    <div>
+      <div className="text-[10px] uppercase tracking-[0.3em] text-foreground/80">{title}</div>
+      <ul className="mt-4 space-y-3">
         {links.map(([l, h]) => (
           <li key={l}>
             <a
               href={h}
               target={h.startsWith("http") ? "_blank" : undefined}
               rel={h.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {l}
             </a>

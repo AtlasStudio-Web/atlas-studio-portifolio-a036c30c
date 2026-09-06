@@ -1,60 +1,115 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { ATLAS_WHATSAPP } from "@/lib/atlas";
+import { MagneticLink } from "@/components/ui/magnetic-link";
 
 const links = [
+  { href: "#projetos", label: "Projetos" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#instagram", label: "Instagram" },
-  { href: "#diferenciais", label: "Processo" },
+  { href: "#processo", label: "Processo" },
   { href: "#contato", label: "Contato" },
 ];
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [solid, setSolid] = useState(false);
+  const [open, setOpen] = useState(false);
+  const last = useRef(0);
+
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setSolid(y > 40);
+      setHidden(y > 240 && y > last.current);
+      last.current = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
-    <motion.header
-      initial={{ y: -16, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-white/[0.06] bg-background/75 backdrop-blur-xl" : ""
-      }`}
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-transform duration-500 ${
+        hidden && !open ? "-translate-y-full" : "translate-y-0"
+      } ${solid ? "border-b border-white/[0.07] bg-background/80 backdrop-blur-xl" : ""}`}
     >
       <div
-        className="mx-auto max-w-7xl px-4 sm:px-6"
+        className="mx-auto max-w-[1500px] px-6 md:px-10"
         style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
       >
-        <div className="flex items-center justify-between gap-3 py-3 md:py-4">
-          <Logo className="shrink-0" />
-          <nav className="hidden md:flex items-center gap-8">
+        <div className="flex items-center justify-between py-4 md:py-5">
+          <a href="#topo" className="shrink-0" aria-label="Atlas Studio — início">
+            <Logo />
+          </a>
+
+          <nav className="hidden items-center gap-10 md:flex">
+            {links.map((l) => (
+              <MagneticLink
+                key={l.href}
+                href={l.href}
+                strength={0.15}
+                className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/40"
+              >
+                {l.label}
+              </MagneticLink>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <a
+              href={ATLAS_WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Falar com a Atlas Studio pelo WhatsApp"
+              className="hidden shrink-0 border border-foreground/25 px-4 py-2.5 text-[11px] uppercase tracking-[0.2em] text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 sm:inline-flex"
+            >
+              Falar com a Atlas
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-label={open ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={open}
+              className="inline-flex h-10 w-10 items-center justify-center border border-white/12 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/50 md:hidden"
+            >
+              {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {open ? (
+        <div className="fixed inset-0 top-0 -z-10 bg-background pt-[calc(var(--header-height)+2rem)] md:hidden">
+          <nav className="flex flex-col px-6">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="relative text-[13px] text-muted-foreground hover:text-foreground transition-colors after:content-[''] after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-full after:scale-x-0 after:bg-foreground/60 after:origin-right hover:after:scale-x-100 hover:after:origin-left after:transition-transform after:duration-300"
+                onClick={() => setOpen(false)}
+                className="border-b border-white/[0.08] py-6 font-display text-3xl font-light tracking-[-0.02em] text-foreground"
               >
                 {l.label}
               </a>
             ))}
+            <a
+              href={ATLAS_WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 inline-flex justify-center bg-foreground px-6 py-4 text-[12px] uppercase tracking-[0.2em] text-background"
+            >
+              Falar com a Atlas
+            </a>
           </nav>
-          <a
-            href={ATLAS_WHATSAPP}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Falar com a Atlas Studio pelo WhatsApp"
-            className="shrink-0 whitespace-nowrap rounded-md bg-foreground px-3 py-2 text-[11px] md:px-4 md:text-[12px] font-medium text-background hover:bg-foreground/90 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            Falar com a Atlas
-          </a>
         </div>
-      </div>
-    </motion.header>
+      ) : null}
+    </header>
   );
 }
