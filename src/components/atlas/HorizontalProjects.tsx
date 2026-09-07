@@ -28,6 +28,8 @@ const projects: Project[] = [
       "Estrutura clara de serviços, atendimento e localização, pensada para quem chega pela busca local.",
     image: p1,
     year: "2026",
+    accent: "#3BB2A0",
+    gradient: "linear-gradient(135deg, #3BB2A0 0%, #1B6FA8 100%)",
   },
   {
     n: "02",
