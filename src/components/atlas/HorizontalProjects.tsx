@@ -40,6 +40,8 @@ const projects: Project[] = [
       "Identidade forte, galeria de cortes e agendamento direto pelo WhatsApp em poucos toques.",
     image: p2,
     year: "2026",
+      accent: "#C9772F",
+    gradient: "linear-gradient(135deg, #C9772F 0%, #7A2E2E 100%)",
   },
   {
     n: "03",
@@ -50,6 +52,8 @@ const projects: Project[] = [
       "Cardápio, ambiente e reserva em uma única página editorial, leve e rápida no celular.",
     image: p3,
     year: "2026",
+      accent: "#D64545",
+    gradient: "linear-gradient(135deg, #D64545 0%, #F0A202 100%)",
   },
   {
     n: "04",
@@ -60,6 +64,8 @@ const projects: Project[] = [
       "Sistema visual aplicado em papelaria e posts, com linguagem consistente em todos os pontos.",
     image: p4,
     year: "2026",
+      accent: "#4F7CFF",
+    gradient: "linear-gradient(135deg, #4F7CFF 0%, #8A5CF6 100%)",
   },
 ];
 
