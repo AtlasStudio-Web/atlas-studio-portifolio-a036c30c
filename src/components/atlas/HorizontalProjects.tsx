@@ -13,6 +13,9 @@ type Project = {
   description: string;
   image: string;
   year: string;
+  /** cor de destaque do projeto */
+  accent: string;
+  gradient: string;
 };
 
 const projects: Project[] = [
@@ -25,6 +28,8 @@ const projects: Project[] = [
       "Estrutura clara de serviços, atendimento e localização, pensada para quem chega pela busca local.",
     image: p1,
     year: "2026",
+    accent: "#3BB2A0",
+    gradient: "linear-gradient(135deg, #3BB2A0 0%, #1B6FA8 100%)",
   },
   {
     n: "02",
@@ -35,6 +40,8 @@ const projects: Project[] = [
       "Identidade forte, galeria de cortes e agendamento direto pelo WhatsApp em poucos toques.",
     image: p2,
     year: "2026",
+      accent: "#C9772F",
+    gradient: "linear-gradient(135deg, #C9772F 0%, #7A2E2E 100%)",
   },
   {
     n: "03",
@@ -45,6 +52,8 @@ const projects: Project[] = [
       "Cardápio, ambiente e reserva em uma única página editorial, leve e rápida no celular.",
     image: p3,
     year: "2026",
+      accent: "#D64545",
+    gradient: "linear-gradient(135deg, #D64545 0%, #F0A202 100%)",
   },
   {
     n: "04",
@@ -55,6 +64,8 @@ const projects: Project[] = [
       "Sistema visual aplicado em papelaria e posts, com linguagem consistente em todos os pontos.",
     image: p4,
     year: "2026",
+      accent: "#4F7CFF",
+    gradient: "linear-gradient(135deg, #4F7CFF 0%, #8A5CF6 100%)",
   },
 ];
 
@@ -123,22 +134,40 @@ export function HorizontalProjects() {
               className="hp-card group lg:w-[62vw] lg:max-w-[880px]"
               data-cursor="Ver"
             >
-              <div className="relative overflow-hidden border border-white/10">
+              <div
+                className="relative overflow-hidden border transition-colors duration-500"
+                style={{ borderColor: `${p.accent}55` }}
+              >
                 <img
                   src={p.image}
                   alt={`${p.title} — ${p.category}, ${p.type} da Atlas Studio`}
                   loading="lazy"
                   width={1408}
                   height={1008}
-                  className="block aspect-[4/3] w-full object-cover grayscale transition-all duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:grayscale-0 lg:aspect-auto lg:h-[46vh]"
+                  className="block aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04] lg:aspect-auto lg:h-[46vh]"
                 />
-                <span className="absolute left-5 top-5 border border-white/25 bg-background/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-foreground backdrop-blur-sm">
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-60 mix-blend-color transition-opacity duration-700 group-hover:opacity-90"
+                  style={{ backgroundImage: p.gradient }}
+                />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-25 mix-blend-soft-light transition-opacity duration-700 group-hover:opacity-45"
+                  style={{ backgroundImage: p.gradient }}
+                />
+                <span
+                  className="absolute left-5 top-5 border px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-foreground backdrop-blur-sm"
+                  style={{ borderColor: `${p.accent}99`, backgroundColor: `${p.accent}33` }}
+                >
                   {p.type}
                 </span>
               </div>
               <div className="mt-6 flex flex-wrap items-baseline justify-between gap-4">
                 <div>
-                  <span className="text-[11px] tracking-[0.3em] text-muted-foreground">{p.n}</span>
+                  <span className="text-[11px] tracking-[0.3em]" style={{ color: p.accent }}>
+                    {p.n}
+                  </span>
                   <h3 className="mt-2 font-display text-3xl font-light tracking-[-0.03em] md:text-4xl">
                     {p.title}
                   </h3>
