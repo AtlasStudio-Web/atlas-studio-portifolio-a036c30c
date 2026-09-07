@@ -134,22 +134,40 @@ export function HorizontalProjects() {
               className="hp-card group lg:w-[62vw] lg:max-w-[880px]"
               data-cursor="Ver"
             >
-              <div className="relative overflow-hidden border border-white/10">
+              <div
+                className="relative overflow-hidden border transition-colors duration-500"
+                style={{ borderColor: `${p.accent}55` }}
+              >
                 <img
                   src={p.image}
                   alt={`${p.title} — ${p.category}, ${p.type} da Atlas Studio`}
                   loading="lazy"
                   width={1408}
                   height={1008}
-                  className="block aspect-[4/3] w-full object-cover grayscale transition-all duration-[900ms] ease-out group-hover:scale-[1.04] group-hover:grayscale-0 lg:aspect-auto lg:h-[46vh]"
+                  className="block aspect-[4/3] w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04] lg:aspect-auto lg:h-[46vh]"
                 />
-                <span className="absolute left-5 top-5 border border-white/25 bg-background/50 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-foreground backdrop-blur-sm">
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-60 mix-blend-color transition-opacity duration-700 group-hover:opacity-90"
+                  style={{ backgroundImage: p.gradient }}
+                />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-25 mix-blend-soft-light transition-opacity duration-700 group-hover:opacity-45"
+                  style={{ backgroundImage: p.gradient }}
+                />
+                <span
+                  className="absolute left-5 top-5 border px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-foreground backdrop-blur-sm"
+                  style={{ borderColor: `${p.accent}99`, backgroundColor: `${p.accent}33` }}
+                >
                   {p.type}
                 </span>
               </div>
               <div className="mt-6 flex flex-wrap items-baseline justify-between gap-4">
                 <div>
-                  <span className="text-[11px] tracking-[0.3em] text-muted-foreground">{p.n}</span>
+                  <span className="text-[11px] tracking-[0.3em]" style={{ color: p.accent }}>
+                    {p.n}
+                  </span>
                   <h3 className="mt-2 font-display text-3xl font-light tracking-[-0.03em] md:text-4xl">
                     {p.title}
                   </h3>
