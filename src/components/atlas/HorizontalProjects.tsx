@@ -13,6 +13,9 @@ type Project = {
   description: string;
   image: string;
   year: string;
+  /** cor de destaque do projeto */
+  accent: string;
+  gradient: string;
 };
 
 const projects: Project[] = [
