@@ -60,7 +60,7 @@ export function Manifesto() {
           loading="lazy"
           width={1408}
           height={1008}
-          className="mf-img absolute inset-0 h-full w-full object-cover grayscale"
+          className="mf-img absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-background/55" />
         <div className="relative flex h-full items-center">

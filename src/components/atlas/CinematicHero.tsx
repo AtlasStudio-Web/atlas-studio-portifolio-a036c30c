@@ -130,7 +130,7 @@ export function CinematicHero() {
                 alt="Website de farmácia desenvolvido pela Atlas Studio em um navegador desktop"
                 width={1408}
                 height={1008}
-                className="block h-[38vh] w-full object-cover object-top grayscale md:h-[46vh]"
+                className="block h-[38vh] w-full object-cover object-top md:h-[46vh]"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
             </div>

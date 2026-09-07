@@ -148,12 +148,7 @@ export function HorizontalProjects() {
                 />
                 <span
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 opacity-60 mix-blend-color transition-opacity duration-700 group-hover:opacity-90"
-                  style={{ backgroundImage: p.gradient }}
-                />
-                <span
-                  aria-hidden
-                  className="pointer-events-none absolute inset-0 opacity-25 mix-blend-soft-light transition-opacity duration-700 group-hover:opacity-45"
+                  className="pointer-events-none absolute inset-0 opacity-0 mix-blend-soft-light transition-opacity duration-700 group-hover:opacity-30"
                   style={{ backgroundImage: p.gradient }}
                 />
                 <span
